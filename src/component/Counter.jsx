@@ -1,21 +1,17 @@
-import { useState } from "react";
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
+function Counter({ quantityCart, setQuantityCart }) {
+  const decrement = () => {
+    if (quantityCart === 0) return;
+    setQuantityCart(quantityCart - 1);
   };
 
-  const decrement = () => {
-    if(count === 0) return
-    setCount(count - 1);
+  const increment = () => {
+    setQuantityCart(quantityCart + 1);
   };
 
   return (
     <div>
       <button onClick={decrement}>-</button>
-      <span>{count}</span>
+      <span>{quantityCart}</span>
       <button onClick={increment}>+</button>
     </div>
   );
