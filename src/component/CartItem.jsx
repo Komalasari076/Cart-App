@@ -1,9 +1,6 @@
-import { useState } from "react";
 import Counter from "./Counter";
 
-function CartItem({ item }) {
-  const [quantityCart, setQuantityCart] = useState(0);
-
+function CartItem({ item, quantityCart, setQuantityCart }) {
   return (
     <div key={item.id} className="flex justify-between">
       <div>
@@ -13,7 +10,12 @@ function CartItem({ item }) {
 
       <p> $ {item.price}</p>
 
-      <Counter quantityCart={quantityCart} setQuantityCart={setQuantityCart} />
+      <Counter
+        quantityCart={quantityCart}
+        setQuantityCart={(newQuantityCart) =>
+          setQuantityCart(item.id, newQuantityCart)
+        }
+      />
 
       <p> total $ {item.price * quantityCart}</p>
     </div>

@@ -4,12 +4,12 @@ import CartList from "./component/CartList";
 
 function App() {
   const [store, setStore] = useState([]);
+  const [quantityCart, setQuantityCart] = useState({});
 
   async function getDataStore() {
     let URL = "https://fakestoreapi.com/products?limit=5";
     const response = await fetch(URL);
     const result = await response.json();
-
     setStore(result);
   }
 
@@ -19,8 +19,12 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <CartList store={store} />
+      <Navbar quantityCart={quantityCart} />
+      <CartList
+        store={store}
+        quantityCart={quantityCart}
+        setQuantityCart={setQuantityCart}
+      />
     </>
   );
 }
