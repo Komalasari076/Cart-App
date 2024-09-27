@@ -3,7 +3,7 @@ import Counter from "./Counter";
 function CartItem({ item, quantityCart, setQuantityCart }) {
   return (
     <div key={item.id} className="flex justify-between items-start">
-      <div class="flex  my-4">
+      <div class="flex mb-8">
         <img
           src={item.image}
           alt="Produk"

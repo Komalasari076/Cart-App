@@ -9,10 +9,10 @@ function Counter({ quantityCart, setQuantityCart }) {
   };
 
   return (
-    <div>
-      <button onClick={decrement}>-</button>
-      <span>{quantityCart}</span>
-      <button onClick={increment}>+</button>
+    <div className="w-24 ">
+      <button onClick={decrement} className="border-solid border-2 border-sky-500 px-1">-</button>
+      <span className="mx-4">{quantityCart}</span>
+      <button onClick={increment} className="border-solid border-2 border-sky-500 px-1">+</button>
     </div>
   );
 }
