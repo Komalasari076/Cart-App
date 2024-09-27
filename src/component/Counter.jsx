@@ -9,10 +9,20 @@ function Counter({ quantityCart, setQuantityCart }) {
   };
 
   return (
-    <div className="w-24 ">
-      <button onClick={decrement} className="border-solid border-2 border-sky-500 px-1">-</button>
-      <span className="mx-4">{quantityCart}</span>
-      <button onClick={increment} className="border-solid border-2 border-sky-500 px-1">+</button>
+    <div className="w-32 ">
+      <button
+        onClick={decrement}
+        className=" border-2 rounded-lg border-indigo-300 px-2"
+      >
+        -
+      </button>
+      <span className="mx-4 font-semibold">{quantityCart}</span>
+      <button
+        onClick={increment}
+        className=" border-2 rounded-lg border-indigo-300 px-2"
+      >
+        +
+      </button>
     </div>
   );
 }

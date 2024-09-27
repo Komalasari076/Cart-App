@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "./component/Navbar";
 import CartList from "./component/CartList";
-import "./App.css";
 
 function App() {
   const [store, setStore] = useState([]);
@@ -19,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div class="md:container md:mx-auto">
+    <div className="md:container md:mx-auto">
       <Navbar quantityCart={quantityCart} />
       <CartList
         store={store}
