@@ -2,22 +2,33 @@ import Counter from "./Counter";
 
 function CartItem({ item, quantityCart, setQuantityCart }) {
   return (
-    <div key={item.id} className="flex justify-between">
-      <div>
-        <img src={item.image} alt="Produk" width={50} />
-        <p>{item.title}</p>
+    <div key={item.id} className="flex justify-between items-start">
+      <div class="flex  my-4">
+        <img
+          src={item.image}
+          alt="Produk"
+          width={70}
+          class="mr-3 drop-shadow-md"
+        />
+        <p class="w-64">{item.title}</p>
       </div>
 
-      <p> $ {item.price}</p>
+      <div>
+        <p className="w-20"> $ {item.price}</p>
+      </div>
 
-      <Counter
-        quantityCart={quantityCart}
-        setQuantityCart={(newQuantityCart) =>
-          setQuantityCart(item.id, newQuantityCart)
-        }
-      />
+      <div>
+        <Counter
+          quantityCart={quantityCart}
+          setQuantityCart={(newQuantityCart) =>
+            setQuantityCart(item.id, newQuantityCart)
+          }
+        />
+      </div>
 
-      <p> total $ {item.price * quantityCart}</p>
+      <div>
+        <p className="w-32"> total $ {item.price * quantityCart}</p>
+      </div>
     </div>
   );
 }
